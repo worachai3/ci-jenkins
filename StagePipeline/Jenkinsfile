@@ -118,7 +118,7 @@ pipeline{
         stage('Deploy to ECS staging'){
             steps{
                 script{
-                    withAWS(credential: 'awscreds', regionn: 'ap-southeast-1'){
+                    withAWS(credential: 'awscreds', region: 'ap-southeast-1'){
                         sh 'aws ecs update-service --cluster ${cluster} --service ${service} --force-new-deployment'
                     }
                 }
