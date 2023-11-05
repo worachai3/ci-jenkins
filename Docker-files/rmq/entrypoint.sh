@@ -19,4 +19,6 @@ if . /vault/secrets/rmq-config.sh; then
 else
     echo "$(date) - Failed to run /vault/secrets/rmq-config.sh."
     exit 1
+
+/usr/local/bin/docker-entrypoint.sh
 fi

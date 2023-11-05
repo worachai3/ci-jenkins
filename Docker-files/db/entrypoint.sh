@@ -18,4 +18,6 @@ if . /vault/secrets/database-config.sh; then
 else
     echo "$(date) - Failed to run /vault/secrets/database-config.sh."
     exit 1
+
+/usr/local/bin/docker-entrypoint.sh
 fi
