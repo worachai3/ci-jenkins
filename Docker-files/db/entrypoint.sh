@@ -14,10 +14,8 @@ fi
 # Attempt to run database-config.sh, and log whether it succeeded
 if . /vault/secrets/database-config.sh; then
     echo "$(date) - Successfully ran /vault/secrets/database-config.sh."
-    echo "$MYSQL_ROOT_PASSWORD"
+    . /usr/local/bin/docker-entrypoint.sh
 else
     echo "$(date) - Failed to run /vault/secrets/database-config.sh."
     exit 1
 fi
-
-/usr/local/bin/docker-entrypoint.sh

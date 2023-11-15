@@ -14,11 +14,8 @@ fi
 # Attempt to run rmq-config.sh, and log whether it succeeded
 if . /vault/secrets/rmq-config.sh; then
     echo "$(date) - Successfully ran /vault/secrets/rmq-config.sh."
-    echo "$RABBITMQ_DEFAULT_USER"
-    echo "$RABBITMQ_DEFAULT_PASS"
+    . /usr/local/bin/docker-entrypoint.sh
 else
     echo "$(date) - Failed to run /vault/secrets/rmq-config.sh."
     exit 1
 fi
-
-/usr/local/bin/docker-entrypoint.sh
